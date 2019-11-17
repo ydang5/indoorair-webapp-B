@@ -10,7 +10,7 @@ class InstrumentSerializer(serializers.Serializer):
     location = serializers.CharField(validators=[
         UniqueValidator(queryset=Instrument.objects.all())
     ])
-    serial_number = serializers.IntegerField(read_only=True)
+    serial_number = serializers.UUIDField(read_only=True)
     name = serializers.CharField(read_only=True)
 
     def create(self, validated_data):

@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Instrument(models.Model):
     name = models.CharField(max_length = 255)
     location = models.CharField(max_length = 255)
-    serial_number = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    serial_number = models.UUIDField(primary_key=True, editable=False)
     user = models.ForeignKey(
         User,
         on_delete = models.CASCADE

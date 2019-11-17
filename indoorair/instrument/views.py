@@ -9,10 +9,10 @@ from foundation.models import Instrument
 from instrument.serializers import InstrumentSerializer
 
 
-def instrument_list_page(request):
+def i_list_page(request):
     return render(request, "instrument/list.html", {})
 
-def instrument_create_page(request):
+def i_create_page(request):
     return render(request, "instrument/create.html", {})
 
 
@@ -41,13 +41,13 @@ class InstrumentCeateAPI(views.APIView):
         )
 
 
-def instrument_retrieve_page(request, id):
+def i_retrieve_page(request, id):
     return render(request, "instrument/retrieve.html", {
         "instrument_id": int(id),
     })
 
 
-def instrument_update_page(request, id):
+def i_update_page(request, id):
     return render(request, "instrument/update.html", {
         "instrument_id": int(id),
     })

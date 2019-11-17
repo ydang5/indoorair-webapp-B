@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Retrieve Instrument</title>
+<title>IndoorAir | Retrieve Instrument</title>
 </head>
 <body>
-  <script>
-    {% include "instrument/retrieve.js" %}
-  </script>
+    <script>
+        {% include "instrument/retrieve.js" %}
+    </script>
 
-<h1>Retrieve</h1>
+    <h1>Retrieve Instrument</h1>
+    <p>
+    ID:
+    <input id="id" name="id" type="text" readonly></input>
+    </p>
+    <p>
+    Name:
+    <input id="name" name="name" type="text" readonly></input>
+    </p>
 
-<p>
-<input id = "retrieve_instrument" name = "retrieve_instrument" type = "text"> Enter Instrument Name</input>
-</p>
+    <p>
+    <button type="button" onclick="onBackClick()">Back</button>
+    <button type="button" onclick="onUpdateClick()">Update</button>
 
-<p>
-
-</p>
-  <button type ="button" onclick ="onRetrieveClick()">Retrieve</button>
-
-<p id="retrieve"></p>
-
+    </p>
+    <p>
+    <button type="button" onclick="showSensorClick()">Sensor Details</button>
+    </p>
 </body>
 </html>
