@@ -27,18 +27,18 @@ class InstrumentListAPIView(views.APIView):
             }
     )
 
-class InstrumentCeateAPI(views.APIView):
-    def post(self ,request):
-
-        serializer = InstrumentSerializer(data = request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-
-
-        return response.Response(
-            status = status.HTTP_201_CREATED,
-            data = serializer.data,
-        )
+# class InstrumentCeateAPI(views.APIView):
+#     def post(self ,request):
+#
+#         serializer = InstrumentSerializer(data = request.data)
+#         serializer.is_valid(raise_exception=True)
+#         serializer.save()
+#
+#
+#         return response.Response(
+#             status = status.HTTP_201_CREATED,
+#             data = serializer.data,
+#         )
 
 
 def i_retrieve_page(request, id):

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h>Report</h>
+</head>
+<body>
+  <script>
+    {% include 'report/01.js' %}
+  </script>
+
+        <h1>Report 01</h1>
+
+        <button onclick ="downloadTemperatureDataOnClick()">Download Temperature Sensor Data</button>
+
+        <br />
+        <br />
+
+        <a herf = "{% url 'report_01_page' %}">Back to Reports</a>
+
+
+
+<a href="{% url 'dashboard_page' %}">Back to Dashboard</a>
+
+<p id=getVersion></p>
+</body>
+</html>

@@ -9,7 +9,7 @@ from sensor.serializers import SensorSerializer
 
 def sensor_retrieve_page(request, id):
     return render(request, "sensor/retrieve.html", {
-        "instrument_id": int(id),
+        "sensor_id": int(id),
     })
 
 

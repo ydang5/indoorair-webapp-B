@@ -11,15 +11,17 @@ class InstrumentSerializer(serializers.Serializer):
     serial_number = serializers.UUIDField(read_only=True)
     name = serializers.CharField(read_only=True)
 
-    def create(self, validated_data):
-
-        location = validated_data.get('location', None)
-        instrument = Instrument.objects.create(location=location)
-        return instrument
+    # def create(self, validated_data):
+    #
+    #     location = validated_data.get('location', None)
+    #     instrument = Instrument.objects.create(location=location)
+    #     return instrument
 
 
     def update(self, object, validated_data):
-
-        object.url = validated_data.get('url')
+        location = validated_data.get('location', None)
+        name = validated_data.get('name',None)
+        object.name=name
+        object.location = location
         object.save()
         return object

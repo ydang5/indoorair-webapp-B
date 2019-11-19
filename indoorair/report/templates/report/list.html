@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h>Report</h>
+</head>
+<body>
+  <script>
+    {% include "homepage/index.js" %}
+  </script>
+
+<h1>Report</h1>
+
+<table style="width:100%">
+  <tr>
+    <th>Report Name</th>
+    <th>Discription</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>Report 1</td>
+    <td>Download time-series data for any sensor</td>
+    <td>
+        <a herf = "{% url 'report_list_page' %}">View</a>
+    </td>
+  </tr>
+  <tr>
+    <td>Report 2</td>
+    <td>N/A</td>
+    <td>
+        <a herf = "">View</a>
+    </td>
+  </tr>
+</table>
+
+
+<a href="{% url 'dashboard_page' %}">Back to Dashboard</a>
+
+<p id=getVersion></p>
+</body>
+</html>
