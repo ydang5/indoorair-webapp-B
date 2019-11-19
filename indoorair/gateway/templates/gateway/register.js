@@ -6,15 +6,13 @@ function onRegisterClick(){
 
 var xhttp = new XMLHttpRequest()
   xhttp.onreadystatechange = function(){
-    if (this.readyState == 4 && this.status == 200){
-      const resultString = this.responseText;
-      var resultObject = JSON.parse(resultString)
-      if(resultObject.was_registered === false){
-        alert(resultObject.reason);
-      }else{
+    if (this.readyState == 4 && this.status == 201){
       window.location.href = "{% url 'register_ok_page' %}";
-      }
     }
+};
+    if (this.readyState == 4 && this.status == 400){
+        alert('something is incorrect!')
+}
 };
 xhttp.open('POST', 'api/register', true);
 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

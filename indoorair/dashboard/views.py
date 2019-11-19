@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 from foundation.models import Instrument, Sensor, TimeSeriesDatum
+from .serializers import DashboardSerializer
 
 
 def dashboard_page(request):
@@ -25,15 +26,14 @@ def dashboard_page(request):
 
 class DashboardAPIView(views.APIView):
     def get(self, request):
+
+        instruments = Instrumrnt.objects.filter(user = request.user)
+
+        serializer = DsahboardSerializer(instruments)
+
         return response.Response(
             status=status.HTTP_200_OK,
-            data = {
-                "average_temperature": get_average_temperature(),
-                "average_pressure": get_average_pressure(),
-                "average_co2": get_average_co2(),
-                "average_tvoc": get_average_tvoc(),
-                "average_humidity": get_average_humidity(),
-            })
+            data = serializer.data)
 #http --form GET http://127.0.0.1:8000/api/dashboard
 
 def get_average_temperature():

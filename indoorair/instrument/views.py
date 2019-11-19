@@ -55,7 +55,7 @@ def i_update_page(request, id):
 
 class InstrumentRetrieveUpdateAPI(views.APIView):
     def get_object(self,id):
-        return get_object_or_404(Instrument, id=id)
+        return get_object_or_404(Instrument, id=int(id))
 
 
     def get(self, request, id):

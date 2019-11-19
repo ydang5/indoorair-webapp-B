@@ -13,7 +13,7 @@ def register_page(request):
    return render(request, "gateway/register.html", {})
 
 
-class AccountRegisterAPI(views.APIView):
+class RegisterAPI(views.APIView):
 
     def post(self, request):
         serializer = RegisterSerializer(data = request.data)
@@ -37,17 +37,17 @@ def login_page(request):
    return render(request, "gateway/login.html", {})
 
 
-class AccountLoginAPI(views.APIView):
+class LoginAPI(views.APIView):
     def post(self, request):
 
-        login_serializer = LoginSerializer(data = request.data,context={
+        login_serializer = LoginSerializer(data = request.data, context={
             'request':request,
         })
         login_serializer.is_valid(raise_exception=True)
         login_serializer.save()
 
         return response.Response(
-            status=status.HTTP_201_CREATED,
+            status=status.HTTP_200_OK,
             data = {
                     'message': 'Login successfully.',
                 })

@@ -5,8 +5,10 @@ function generateViewFromObject(dataObj) {
     } else {
         var idInputElement = document.getElementById("id");
         var nameInputElement = document.getElementById("name");
+        var locationInputElement = document.getElementById("location");
         idInputElement.value = dataObj.id;
         nameInputElement.value = dataObj.name;
+        locationInputElement.value = dataObj.location;
     }
 }
 
@@ -56,5 +58,6 @@ function onSubmitClick() {
     xhttp.open("POST", "/api/instrument/"+instrumentId+"/update", true);
     xhttp.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     const name = document.getElementById("name").value;
-    xhttp.send("name="+name);
+    const location = document.getElementById("location").value;
+    xhttp.send("name="+name+"location="+location);
 }

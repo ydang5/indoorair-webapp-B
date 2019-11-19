@@ -10,7 +10,7 @@ urlpatterns = [
     path('instrument/update', views.i_update_page, name='i_update_page'),
     path('api/instruments/create', views.InstrumentCeateAPI.as_view()),
     path('api/instruments', views.InstrumentListAPIView.as_view()),
-    path('api/instrument/<id>', views.InstrumentRetrieveUpdateAPI.as_view()),
+    path('api/instrument/<int:id>', views.InstrumentRetrieveUpdateAPI.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

@@ -129,7 +129,7 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication'
+        'foundation.drf.custom_authentication.CsrfExemptSessionAuthentication',
     ),
     'DEFAULT_FILTER_BACKENDS': (
         # PLACE FILTERING CLASSES HERE.
